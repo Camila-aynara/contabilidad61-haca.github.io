@@ -1,0 +1,372 @@
+/* procesos contables
+   Camila Aynara Hernandez Arana
+   COBAQ Cancun 2 - 2026 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    color: #111;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    padding: 14px 35px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.enc-izq {
+    display: flex;
+    align-items: center;
+}
+
+.enc-icono {
+    font-size: 1.3rem;
+    margin-right: 10px;
+}
+
+.enc-nombre {
+    color: #e63946;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.enc-nav a {
+    color: #ccc;
+    margin-left: 22px;
+    font-size: 0.88rem;
+}
+
+.enc-nav a:hover { color: #e63946; }
+
+.portada {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: #111;
+    color: white;
+    min-height: 420px;
+}
+
+.portada-caja {
+    padding: 60px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.portada-tag {
+    font-size: 0.8rem;
+    color: #e63946;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.portada-caja h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.portada-caja h1 span { color: #e63946; }
+
+.portada-desc {
+    font-size: 0.95rem;
+    color: #aaa;
+    line-height: 1.7;
+    max-width: 400px;
+}
+
+.portada-tarjetas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2px;
+    background: #222;
+}
+
+.ptarjeta {
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    text-align: center;
+    border-left: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.ptarjeta:hover {
+    background: #222;
+    border-top: 3px solid #e63946;
+    transition: all 0.15s;
+}
+
+.ptarjeta span { font-size: 2rem; display: block; margin-bottom: 10px; }
+.ptarjeta p { font-size: 0.85rem; color: #aaa; }
+
+.banda-roja {
+    background: #c62828;
+    padding: 50px 0;
+    color: white;
+}
+
+.contenido {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+.seccion {
+    padding: 45px 25px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.titulo {
+    font-size: 1.4rem;
+    color: #111;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #e63946;
+    display: inline-block;
+}
+
+.titulo.blanco {
+    color: white;
+    border-color: rgba(255,255,255,0.4);
+}
+
+.def-texto {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.dos-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.col-bloque {
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 22px 24px;
+    border-top: 3px solid rgba(255,255,255,0.3);
+}
+
+.col-bloque h3 { font-size: 1rem; color: #ffd6d6; margin-bottom: 14px; }
+
+.col-bloque ul { padding-left: 18px; }
+
+.col-bloque ul li {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.82);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.imp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 14px;
+}
+
+.imp-card {
+    background: white;
+    border-radius: 10px;
+    padding: 22px 16px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    border-bottom: 4px solid #e63946;
+}
+
+.imp-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.15);
+    transition: all 0.2s;
+}
+
+.imp-card span { font-size: 2rem; display: block; margin-bottom: 10px; }
+.imp-card p { font-size: 0.85rem; color: #333; line-height: 1.5; }
+
+.banda-oscura {
+    background: #1a1a1a;
+    padding: 55px 0;
+    color: white;
+}
+
+.formulas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+}
+
+.formula-card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    padding: 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 4px solid #e63946;
+}
+
+.f-nombre {
+    font-size: 0.78rem;
+    color: #e63946;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+.f-formula {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+    background: rgba(230, 57, 70, 0.12);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+.f-desc { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+.apli-lista {
+    display: flex;
+    flex-direction: column;
+}
+
+.apli-item {
+    display: flex;
+    align-items: flex-start;
+    background: white;
+    border-radius: 10px;
+    padding: 22px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    border-left: 5px solid #e63946;
+    margin-bottom: 14px;
+}
+
+.apli-item:hover { transform: translateX(5px); transition: transform 0.2s; }
+
+.apli-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #f5c0c0;
+    flex-shrink: 0;
+    width: 40px;
+    margin-right: 20px;
+}
+
+.apli-item h3 { font-size: 1rem; color: #c62828; margin-bottom: 6px; }
+.apli-item p { font-size: 0.88rem; color: #555; line-height: 1.6; }
+
+.herr-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 18px;
+}
+
+.herr-card {
+    background: rgba(0,0,0,0.18);
+    border-radius: 12px;
+    padding: 28px 22px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.herr-card:hover { background: rgba(0,0,0,0.28); transition: background 0.2s; }
+.herr-ico { font-size: 2.8rem; margin-bottom: 12px; display: block; }
+.herr-card h3 { color: #ffd6d6; font-size: 1rem; margin-bottom: 8px; }
+.herr-card p { font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+.refs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    margin-top: 8px;
+}
+
+.ref-card {
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.ref-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #e63946;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-right: 14px;
+}
+
+.ref-texto p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+.ref-texto em { color: #ff8080; font-style: italic; }
+
+.pie {
+    background: #080808;
+    color: #888;
+    text-align: center;
+    padding: 22px 20px;
+    font-size: 0.82rem;
+}
+
+.pie-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.pie-info p { color: #aaa; margin: 0 15px; }
+.pie-info strong { color: #e63946; }
+
+.pie-copy {
+    color: #555;
+    font-size: 0.76rem;
+    border-top: 1px solid #1a1a1a;
+    padding-top: 10px;
+    margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+    .portada { grid-template-columns: 1fr; }
+    .portada-tarjetas { grid-template-columns: 1fr 1fr; }
+    .dos-cols { grid-template-columns: 1fr; }
+    .imp-grid { grid-template-columns: 1fr 1fr; }
+    .formulas-grid { grid-template-columns: 1fr; }
+    .herr-grid { grid-template-columns: 1fr; }
+    .refs-grid { grid-template-columns: 1fr; }
+    .enc-nav { display: none; }
+    .portada-caja { padding: 40px 25px; }
+    .portada-caja h1 { font-size: 2.2rem; }
+    .pie-info { flex-direction: column; }
+    .pie-info p { margin: 3px 0; }
+}
